@@ -15,20 +15,21 @@ c := web.NewChain(ErrorHandler, Logger)
 
 m := http.NewServeMux()
 
-// For your individual handlers, pass in an Endpoint
+// For your individual handlers, pass in an Endpoint. An endpoint returns a HandlerFunc
 m.HandleFunc("/users", c.Endpoint(UserHandler))
 
-
+// I return an error if something goes wrong and let someone else deal with it
 func UserHandler(w http.ResponseWriter, r *http.Request) error {
 	// do stuff
 	u, err := SaveUser(r)
-	// 
+	
+	// Oh crap, something went wrong
 	if err != nil {
 	// This will be handled by the ErrorHandler defined below
 	return err
 	}
 	
-	// Do something with u
+	// Do something with u if no error
 }
 
 // I handle stuff when things go wrong. If you have custom errors defined,
