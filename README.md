@@ -1,5 +1,5 @@
 # jalapeno
-A tiny set of commonly used funcs/patterns that I constantly found myself copying from project to project.
+A tiny set of commonly used funcs/patterns that I constantly find myself copying from project to project.
 
 ## Purpose
 Avoid me copying the same crap over and over. Now I can just import it!
